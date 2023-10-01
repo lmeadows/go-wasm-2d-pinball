@@ -12,7 +12,6 @@ func main() {
 		event := args[0]
 		key, code := event.Get("key").String(), event.Get("code").String()
 		println(fmt.Printf("Pressed %v with code %v", key, code))
-		//println(args[0].Get("key").String())
 		return nil
 	}))
 
