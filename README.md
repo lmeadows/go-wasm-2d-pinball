@@ -2,6 +2,10 @@
 ## Overview
 Browser-based pinball game using 2D Canvas and WebAsssembly (WASM), compiled from Go.
 
+Many learnings we drawn from the following projects:
+- [https://github.com/go4orward/gigl](https://github.com/go4orward/gigl)
+- [https://github.com/markfarnan/go-canvas](https://github.com/markfarnan/go-canvas)
+
 ## Dev Environment Setup
 
 ### Basic CLI Setup
