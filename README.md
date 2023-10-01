@@ -1,4 +1,7 @@
-# Go 2D Pinball
+# Go WASM 2D Pinball
+## Overview
+Browser-based pinball game using 2D Canvas and WebAsssembly (WASM), compiled from Go.
+
 ## Dev Environment Setup
 
 ### Basic CLI Setup
