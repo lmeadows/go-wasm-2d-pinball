@@ -1,20 +1,20 @@
 package main
 
 import (
+	"fmt"
 	"syscall/js"
-
-	"github.com/markfarnan/go-canvas/canvas"
 )
 
 var runForever chan struct{}
 
-var cvs *canvas.Canvas2d
-var width float64
-var height float64
-
 func main() {
-	cvs, _ = canvas.NewCanvas2d(false)
-	cvs.Create(int(js.Global().Get("innerWidth").Float()*0.5), int(js.Global().Get("innerWidth").Float()*0.8))
+	js.Global().Get("document").Call("addEventListener", "keydown", js.FuncOf(func(this js.Value, args []js.Value) interface{} {
+		event := args[0]
+		key, code := event.Get("key").String(), event.Get("code").String()
+		println(fmt.Printf("Pressed %v with code %v", key, code))
+		//println(args[0].Get("key").String())
+		return nil
+	}))
 
 	<-runForever
 }
