@@ -8,6 +8,8 @@ import (
 var runForever chan struct{}
 
 func main() {
+	canvas := js.Global().Get("document").Call("getElementById", "gamecanvas")
+	log(canvas)
 	js.Global().Get("document").Call("addEventListener", "keydown", js.FuncOf(func(this js.Value, args []js.Value) interface{} {
 		event := args[0]
 		key, code := event.Get("key").String(), event.Get("code").String()
@@ -16,4 +18,8 @@ func main() {
 	}))
 
 	<-runForever
+}
+
+func log(args ...interface{}) {
+	js.Global().Get("console").Call("log", args...)
 }
